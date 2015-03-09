@@ -27,6 +27,8 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+
+        $('#calcTip').on('click', this.calcTip);
     },
     // deviceready Event Handler
     //
@@ -34,6 +36,11 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+
+        StatusBar.overlaysWebView( false );
+        StatusBar.backgroundColorByName( "gray" );
+
+
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -45,5 +52,13 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+    calcTip: function() {
+            var billAmt = Number( $('#billAmount').val() );
+            console.log(billAmt);
+            var tipAmt = billAmt * 70/100 ;
+            var totalAmt = billAmt + tipAmt;
+            $('#tipAmount').text('$' + tipAmt.toFixed(2));
+            $('#totalAmount').text('$' + totalAmt.toFixed(2));    
     }
 };
