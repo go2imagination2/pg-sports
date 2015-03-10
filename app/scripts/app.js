@@ -42,7 +42,12 @@ angular
     // 'load', 'deviceready', 'offline', and 'online'.
 
 document.addEventListener('deviceready', function() {
-      console.warn('fire');
+      console.warn('deviceready');
       StatusBar.overlaysWebView( false );
       StatusBar.backgroundColorByName( 'gray' );
-});
+}, false);
+
+document.addEventListener('offline', function() {
+      console.warn('offline');
+}, false);
+

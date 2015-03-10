@@ -31,10 +31,22 @@ yo angular:service myService
 
 # PhoneGap
 
+
 ## Add capacity for specific platform
 
 `phonegap run ios`
 
+## Add Plugin
+
+`phonegap plugin add org.apache.cordova.statusbar`
+`phonegap plugin add org.apache.cordova.geolocation`
+`phonegap plugin add org.apache.cordova.network-information`
+
 ## Run in Simulator
 
 `phonegap emulate ios`
+
+## Send to Cloud
+
+`phonegap remote login`
+`phonegap remote run ios`
