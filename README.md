@@ -20,6 +20,13 @@ Run `grunt` for building and `grunt serve:dist` for preview.
 
 `bower install --save jquery-ui` 
 
+## Angular Yeoman template 
+`
+yo angular:controller myController
+yo angular:directive myDirective
+yo angular:filter myFilter
+yo angular:service myService
+`
 -------------------------------------------------------------------
 
 # PhoneGap

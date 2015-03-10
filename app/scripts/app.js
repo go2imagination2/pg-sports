@@ -1,4 +1,5 @@
 'use strict';
+/* global StatusBar */
 
 /**
  * @ngdoc overview
@@ -36,3 +37,12 @@ angular
         redirectTo: '/'
       });
   });
+
+    // Bind any events that are required on startup. Common events are:
+    // 'load', 'deviceready', 'offline', and 'online'.
+
+document.addEventListener('deviceready', function() {
+      console.warn('fire');
+      StatusBar.overlaysWebView( false );
+      StatusBar.backgroundColorByName( 'gray' );
+});
