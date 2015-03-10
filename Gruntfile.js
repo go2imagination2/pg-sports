@@ -384,6 +384,10 @@ module.exports = function (grunt) {
     karma: {
       unit: {
         configFile: 'test/karma.conf.js',
+        singleRun: true
+      },
+      tdd: {
+        configFile: 'test/karma.conf.js',
         singleRun: false
       }
     }
@@ -416,7 +420,16 @@ module.exports = function (grunt) {
     'concurrent:test',
     'autoprefixer',
     'connect:test',
-    'karma'
+    'karma:unit'
+  ]);
+
+  grunt.registerTask('tdd', [
+    'clean:server',
+    'wiredep',
+    'concurrent:test',
+    'autoprefixer',
+    'connect:test',
+    'karma:tdd'
   ]);
 
   grunt.registerTask('build', [
