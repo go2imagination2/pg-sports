@@ -1,5 +1,5 @@
 'use strict';
-/* global StatusBar, $, Connection */
+/* global StatusBar, $, Connection, alert */
 
 /**
  * @ngdoc overview
@@ -39,7 +39,7 @@
 });
 
 
-    function checkConnection() {
+ function checkConnection() {
       // plugin org.apache.cordova.network-information
       if (navigator.connection !== undefined) {
         var networkState = navigator.connection.type;
@@ -57,6 +57,9 @@
         $('$conn_type').text('Connection type: ' + states[networkState]);
       }
     }
+
+
+
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
 
@@ -66,9 +69,12 @@
       StatusBar.backgroundColorByName( 'gray' );
 
       checkConnection();
+
+
     }, false);
 
     document.addEventListener('offline', function() {
       console.warn('offline');
+      alert('offline');
     }, false);
 

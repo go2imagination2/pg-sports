@@ -41,6 +41,8 @@ yo angular:service myService
 `phonegap plugin add org.apache.cordova.statusbar`
 `phonegap plugin add org.apache.cordova.geolocation`
 `phonegap plugin add org.apache.cordova.network-information`
+`phonegap plugin add com.phonegap.plugins.barcodescanner`
+
 
 ## Run in Simulator
 
