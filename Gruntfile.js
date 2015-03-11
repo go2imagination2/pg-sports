@@ -10,7 +10,10 @@
 module.exports = function (grunt) {
 
   // Load grunt tasks automatically
-  require('load-grunt-tasks')(grunt);
+  // require('load-grunt-tasks')(grunt);
+  require('jit-grunt')(grunt, {
+    useminPrepare: 'grunt-usemin'
+  });
 
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
@@ -451,7 +454,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'newer:jshint',
-    'test',
+    // 'test',
     'build'
   ]);
 };
