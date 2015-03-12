@@ -5,3 +5,4 @@ dist
 bower_components
 .metadata/
 www
+platforms/ios/Hello World.xcodeproj/project.xcworkspace/xcuserdata/
